@@ -75,22 +75,24 @@ class App extends Component {
   renderLoginButton(){
     if (this.state.user) {
       return(
-        <div>
-          <img width="100" src={this.state.user.photoURL} alt={this.state.user.displayName}></img>
-          <p>Hola {this.state.user.displayName}</p>
-          <button onClick={this.handleLogout}>Salir</button>
+        <div className="App-intro">
+          <p className="App-intro">Hola {this.state.user.displayName}</p>
+          <button onClick={this.handleLogout} className="App-btn">Salir</button>
 
 
           <FileUpload onUpload={this.handleUpload}/>
 
           {
             this.state.pictures.map(picture => (
-              <div>
-                <img width="100" src={picture.image} alt=""/>
-                <br/>
-                <img width="100" src={picture.photoURL} alt={picture.displayName}/>
-                <br/>
-                <span>{picture.displayName}</span>
+              <div className="App-card">
+                <figure className="App-card-image">
+                  <img width="320" src={picture.image} alt=""/>
+                  <figCaption className="App-card-footer">
+                    <img className="App-card-avatar" src={picture.photoURL} alt={picture.displayName}/>
+                    <span className="App-card-name">{picture.displayName}</span>
+                  </figCaption>
+                </figure>
+
               </div>
             )).reverse()
           }
