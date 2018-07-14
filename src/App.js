@@ -86,9 +86,9 @@ class App extends Component {
           {
             this.state.pictures.map(picture => (
               <div>
-                <img src={picture.image} alt=""/>
+                <img width="100" src={picture.image} alt=""/>
                 <br/>
-                <img src={picture.photoURL} alt={picture.displayName}/>
+                <img width="100" src={picture.photoURL} alt={picture.displayName}/>
                 <br/>
                 <span>{picture.displayName}</span>
               </div>
